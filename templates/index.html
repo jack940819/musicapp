@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Music System</title>
+</head>
+<body>
+    <h1>Music List</h1>
+    <a href="{{ url_for('create_music_page') }}">Add New Music</a>
+    <ul>
+        {% for music in music_list %}
+        <li>
+            <a href="{{ url_for('music_detail', music_id=music.id) }}">{{ music.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
